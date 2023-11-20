@@ -1,10 +1,11 @@
-int fact(int f) {
-  if (f <= 0)
-     return 0;
-
-  if (f == 1)
-     return 1;
-
-  else
-     return f * fact(f - 1);
+int fact(int f){
+   if (f == 1 || f <= 0) {
+    return 1;
+  } else {
+    int result = 1;
+    for (int i = 2; i <= f; i++) {
+      result *= i;
+    }
+    return result;
+  }
 }
