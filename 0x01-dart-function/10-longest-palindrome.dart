@@ -11,9 +11,9 @@ String longestPalindrome(String s) {
   String longest = "none";
   int maxLength = 0;
   
-  for (int x = 0; x < s.length; x++) {
+  for (int i = 0; i < s.length; i++) {
     for (int j = i + 2; j <= s.length; j++) {
-      String substr = s.substring(x, j);
+      String substr = s.substring(i, j);
       if (isPalindrome(substr) && substr.length > maxLength) {
         maxLength = substr.length;
         longest = substr;
