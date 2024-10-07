@@ -1,8 +1,13 @@
-import ' 1-util.dart';
+import '1-util.dart';
 import 'dart:convert';
 
 Future<String> getUserId() async {
-  String data = await fetchUserData();
-  Map dataMap = jsonDecode(data);
-  return dataMap['id'];
+  final userData = await fetchUserData();
+  final decodedData = jsonDecode(userData);
+  final userId = decodedData['id'];
+  return userId;
+}
+
+void main() async {
+  print(await getUserId());
 }
